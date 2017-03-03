@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function People(type) {
+            this.type = type;
+        }
+        People.prototype.say = function () {
+            console.log(this.type)
+        }
+
+        function Man(name,type) {
+            People.call(this,type);
+            this.name = name
+        }
+        Man.prototype = new People();
+        console.log(new Man('张三','男人'))
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
